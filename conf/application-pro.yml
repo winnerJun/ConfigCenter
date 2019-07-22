@@ -1,15 +1,15 @@
 server:
-  port: 8052
+  port: 80077
 spring:
   application:
-    name: win-config-server
+    name: win-provider-server
+    #配置中心客户端设置
   cloud:
     config:
-      server:
-        git:
-          uri: https://github.com/winnerJun/ConfigCenter
-          username: 522521925@qq.com
-          password: Winner123=
+      discovery:
+        enabled: true
+        service-id: win-eureka-server
+
 eureka:
   client:
     serviceUrl:
