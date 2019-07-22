@@ -2,7 +2,7 @@ server:
   port: 8072
 spring:
   application:
-    name: win-provider-server
+    name: win-provider-server2
   cloud:
     config:
       name: application #对应config server Url中的{application}
