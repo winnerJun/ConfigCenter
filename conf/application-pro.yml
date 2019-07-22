@@ -1,0 +1,21 @@
+server:
+  port: 8052
+spring:
+  application:
+    name: win-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/winnerJun/ConfigCenter
+          username: 522521925@qq.com
+          password: Winner123=
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://${win-eureka.hostname}:${win-eureka.port}/eureka/
+
+#自定义属性，配置注册中心地址
+win-eureka:
+  port: 8092
+  hostname: 127.0.0.1
