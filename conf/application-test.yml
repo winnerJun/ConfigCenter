@@ -1,14 +1,15 @@
-server:
-  port: 8077
 spring:
   application:
     name: win-provider-server
-    #配置中心客户端设置
   cloud:
     config:
+      name: application #对应config server Url中的{application}
+      profile: test #配置环境，对应config server Url中的{profile}
+      #label: trunk #配置分支(不配置则默认：git则是master,svn则是trunk)，
+      #uri: http://localhost:8052 #配置中心地址
       discovery:
-        enabled: true
-        service-id: win-eureka-server
+        enabled: true #启用服务发现
+        service-id: win-config-server #指定要从eureka获取的config server的服务ID（即：configserverr的applicationName）
 
 eureka:
   client:
